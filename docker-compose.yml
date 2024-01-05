@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  django:
+    container_name: django
+    build:
+      context: ./temples
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./temples:/user/src/app/
+    ports:
+      - 8001:8000
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=034df34f3f2d32dr2f677896545
+      - ALLOWED_HOSTS=localhost,127.0.0.1

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    {% block title %}
+    Django App
+    {% endblock %}
+  </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="d-flex" style="height: 100vh;">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi pe-none me-2" width="40" height="32">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">LDS Temples</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+
+
+
+        {% block sidebar %}
+
+        {% for temple in sidebar_data %}
+
+        <li>
+          <a href="/temple/{{temple.id}}" class="nav-link link-body-emphasis">
+            {{ temple.name }}
+          </a>
+        </li>
+
+
+        {% endfor %}
+
+        {% endblock %}
+
+
+      </ul>
+      <hr>
+
+    </div>
+    <div class="container py-5">{% block content %} {% endblock %}</div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $('.nav-link').on('click', function () {
+        $(this).addClass('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
