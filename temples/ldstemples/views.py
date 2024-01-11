@@ -12,3 +12,9 @@ def templelist(request):
 def temple(request, temple_id):
     temple = Temple.objects.get(id=temple_id)
     return render(request, 'temple.html', {"temple": temple})
+
+def templeshow(request, temple_id):
+    temple = Temple.objects.get(id=temple_id)
+    html = f"<div><h1>{temple.city}, {temple.country} Temple</h1></div>"
+    return HttpResponse(html)
+

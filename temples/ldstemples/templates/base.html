@@ -13,6 +13,7 @@
     rel="stylesheet" />
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -34,7 +35,7 @@
         {% for temple in sidebar_data %}
 
         <li>
-          <a href="/temple/{{temple.id}}" class="nav-link link-body-emphasis">
+          <a hx-get="/templeshow/{{temple.id}}" hx-swap="innerHTML" hx-target="#content" class="nav-link link-body-emphasis">
             {{ temple.name }}
           </a>
         </li>
@@ -49,7 +50,7 @@
       <hr>
 
     </div>
-    <div class="container py-5">{% block content %} {% endblock %}</div>
+    <div id="content" class="container py-5">{% block content %} {% endblock %}</div>
   </div>
   <script>
     $(document).ready(function () {
