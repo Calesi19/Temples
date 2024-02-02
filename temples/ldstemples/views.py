@@ -23,7 +23,19 @@ def templeshow(request, temple_id):
 
     <div class="row my-5 px-3" style="justify-content: space-between">
     <div>
-    <p>Address: {temple.city}</p>
+    <dl class="row">
+    <dt class="col-sm-3">Address</dt>
+    <dd class="col-sm-8">
+    
+    11301 Temple Hill Rd,
+    Orlando, FL 32817
+    
+    </dd>
+  
+    <dt class="col-sm-3">Dedicated</dt>
+    <dd class="col-sm-9">
+      <p>Definition for the term.</p>
+    </dd>
     </div>
 
     <div id="myCarousel" class="carousel slide rounded" style="height: 300px; width: 400px; overflow: hidden;">
@@ -52,7 +64,10 @@ def templeshow(request, temple_id):
 
     </div>
     {google_map}
-    {hostname}
+
+    <div class="card p-4 bg-dark">
+    <code style="color: white;">{hostname}/{temple_id}</code>
+    </div>
     </div>
     """
     return HttpResponse(html)
