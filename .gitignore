@@ -1,0 +1,87 @@
+# Directories to ignore
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+**/Properties/
+**/wwwroot/
+**/packages/
+
+# Files to ignore
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.sln.docstates
+*.dll
+*.exe
+*.pdb
+*.cache
+*.vsp
+*.vspx
+*.ilk
+*.aps
+*.ncb
+*.tlb
+*.tlh
+*.bak
+*.log
+*.vspscc
+*.vssscc
+*.scc
+
+# Project files to ignore
+*.csproj.user
+
+
+# Web publish scripts
+*.pubxml
+*.pubxml.user
+
+# NuGet packages
+packages/*
+!packages/build/
+
+# Resharper
+**/_ReSharper.*/
+**/*ReSharper*/
+*.DotSettings.user
+
+# Rider
+.idea/
+
+# User-specific files
+*.rsuser
+*.user
+*.userosscache
+
+# MacOS files
+.DS_Store
+
+# Visual Studio Code
+.vscode/*
+
+# Azure Artifacts
+**/AzureDevOps/*
+!**/AzureDevOps/.placeholder
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Tooling
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.dll
+*.pdb
+*.zip
+*.tar.gz
+*.rar
+*.7z
